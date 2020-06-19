@@ -1,0 +1,31 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+ button {
+  font-family: 'Bungee', cursive;
+  background-color: darkblue;
+  color: #ffffff;
+ }
+
+ output {
+  float: right;
+ }
+
+ label {
+   display: flex;
+   justify-content: start;
+ }
+
+ textarea {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */

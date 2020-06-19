@@ -14,21 +14,20 @@ html {
  * Global layout stuff
  */
 
-body {
-  color: #545149;
-  background-color: #f4f1ec;
+nav {
+  height: 120px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #4056A1;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
 }
 
-main {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f4f1ec;
-}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

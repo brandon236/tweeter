@@ -1,0 +1,27 @@
+
+
+
+
+
+
+header {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ff9c07;
+  background-image: url(http://www.transparenttextures.com/patterns/hexellence.png);
+}
+
+h2 {
+
+  width: 100%;
+  color: #545149;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
