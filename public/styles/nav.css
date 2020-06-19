@@ -15,6 +15,8 @@ html {
  */
 
 nav {
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   color: #ffffff;
@@ -27,7 +29,3 @@ nav {
   padding-right: 20px;
   align-items: center;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

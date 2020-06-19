@@ -12,7 +12,7 @@
   border: 5px solid red;
   display: flex;
   justify-content: center;
-  display:none
+  display: none;
 }
 
 .tweet-container {
@@ -33,14 +33,15 @@
 }
 
 .tweetImage {
-  height: 65px;
-  width: 65px;
+  padding-top: 3px;
+  height: 50px;
+  width: 50px;
   display: flex;
   justify-content: left;
 }
 
 .name {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .handle {
@@ -66,7 +67,8 @@
   padding-left: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
-  word-wrap: break-word;
+  display: flex;
+  justify-content: left;
 }
 
 .tweet-container article footer {
@@ -79,6 +81,8 @@
   justify-content: space-between;
 }
 
+
+/*Set max-width*/
 @media only screen and (max-width: 780px) {
   .tweet-container {
     width: 100%;

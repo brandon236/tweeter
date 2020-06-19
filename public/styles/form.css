@@ -14,18 +14,9 @@
   float: right;
  }
 
- label {
-   display: flex;
-   justify-content: start;
- }
-
- textarea {
+ .tweet-text {
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

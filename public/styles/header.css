@@ -1,3 +1,4 @@
+/*Syling for the header bar underneath the nav bar*/
 .firstDisplay {
   height: 400px;
   width: 30vw;
@@ -9,14 +10,13 @@
   background-image: url(http://www.transparenttextures.com/patterns/hexellence.png);
 }
 
-h2 {
-
+.my-name {
   width: 100%;
-  color: #545149;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*Creates max-width*/
 @media only screen and (max-width: 780px) {
   .firstDisplay {
     width: 100%;
