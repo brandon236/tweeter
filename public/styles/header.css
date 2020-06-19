@@ -1,11 +1,6 @@
-
-
-
-
-
-
-header {
+.firstDisplay {
   height: 400px;
+  width: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +17,8 @@ h2 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media only screen and (max-width: 780px) {
+  .firstDisplay {
+    width: 100%;
+  }
+}

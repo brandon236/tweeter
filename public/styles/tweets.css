@@ -78,3 +78,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 780px) {
+  .tweet-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
