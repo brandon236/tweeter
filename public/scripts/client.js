@@ -1,27 +1,33 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function(){
+
+  $('#new-tweet-button').on('submit', function(event) {//
+    event.preventDefault();
+    console.log($(".new-tweet").is(":visible"));
+    if (!$(".new-tweet").is(":visible")) {
+      $(".new-tweet").slideDown();
+      $("#tweet-text").focus();
+    } else {
+      $(".new-tweet").slideUp();
+    }
+  }),
+
   $('#submit-button').on('submit', function(event) {
     event.preventDefault();
-    console.log($('.counter').val())
-    if ($('.counter').val() < 0) {
+    if ($('.counter').val() < 0) {//Checks if tweet is too long
       $( ".errorText" ).remove();
       const $error = $(`<label class="errorText">Your Tweet is too long.</label>`);
       $("#error").append($error);
       $(".errorText").slideDown();
       return false;
     }
-    if ($('#tweet-text').val() === "") {
+    if ($('#tweet-text').val() === "") {//Checks if tweet is empty
       $( ".errorText" ).remove();
       const $error = $(`<label class="errorText">Your Tweet is empty.</label>`);
       $("#error").append($error);
       $(".errorText").slideDown();
       return false;
     }
-    if ($('#tweet-text').val() === null) {
+    if ($('#tweet-text').val() === null) {//Checks if tweet is null
       $( ".errorText" ).remove();
       const $error = $(`<label class="errorText">Your Tweet is null.</label>`);
       $("#error").append($error);
@@ -29,8 +35,8 @@ $(document).ready(function(){
       return false;
     }
     const myData = $(this).serialize();
-    $( ".errorText" ).remove();
-    $.ajax({
+    $( ".errorText" ).remove();//Removes any error messages
+    $.ajax({//Ajax POST request
       url: '/tweets',
       type: 'POST',
       data: myData,
@@ -43,6 +49,7 @@ $(document).ready(function(){
     });
   });
 
+  //Ajax get request to fetch all the tweets from /tweets
   const loadTweets = function (){
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
@@ -53,7 +60,7 @@ $(document).ready(function(){
 });
 
 
-
+//Creates tweet elements dynamically from tweet object
 const createTweetElement = function (data) {
   const date = new Date(0);
   date.setUTCMilliseconds(data.created_at);
@@ -81,10 +88,12 @@ const createTweetElement = function (data) {
 return $tweet;
 }
 
+
+//Uses createTweetElements function to display tweets from an array of tweet objects
 const renderTweets = function(tweets) {
-  $('.tweet-container').empty()
+  $('.tweet-container').empty()//Empties container to ensure duplicate tweets are not posted
   for (tweetItem of tweets) {
     const $tweet = createTweetElement(tweetItem);
-    $(".tweet-container").prepend($tweet);
+    $(".tweet-container").prepend($tweet);//Puts newest tweet at the top of the list
   }
 }
