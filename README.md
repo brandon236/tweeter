@@ -1,8 +1,10 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter project. 
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+I made a nav bar which contains the new tweet button. This button creates the new tweet input box where users can post a new tweet. Each new tweet will appear at the top of the list with the newest tweets at the top and the oldest at the bottom. Each tweet contains the username, avatar, and handle at the top. It then contains the tweet itself and then a footer that contains the date posted as well as three icons to the right. 
+
+I also designed this with response programming so that the tweet container and the main header will scale with the window. If the width of the window gets small enough, the elements will be aligned to one column which will stretch the width of the window. 
 
 ## Getting Started
 
@@ -15,3 +17,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+![Screenshot of new tweet box](https://github.com/brandon236/tweeter/blob/master/docs/new-tweet.png)
+![Screenshot of tweet list](https://github.com/brandon236/tweeter/blob/master/docs/tweet-page.png)
+
