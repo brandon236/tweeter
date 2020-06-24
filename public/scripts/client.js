@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $('#new-tweet-button').on('submit', function(event) {//Creates 'create tweet box'
     event.preventDefault();
-    console.log($(".new-tweet").is(":visible"));
     if (!$(".new-tweet").is(":visible")) {
       $(".new-tweet").slideDown();
       $("#tweet-text").focus();
@@ -33,6 +32,7 @@ $(document).ready(function() {
       $('.errorText').slideDown();
       return false;
     }
+
     const myData = $(this).serialize();
     $('.errorText').remove();//Removes any error messages
     $.ajax({
@@ -75,7 +75,7 @@ const createTweetElement = function(data) {
       </div>
     </header>
     <label class="tweetContent" for="tweets">
-      ${data.content.text}
+      ${`${escape(data.content.text)}`}
     </label>
     <footer>
       <label class="daysAgo">${date}</label>
@@ -88,9 +88,16 @@ const createTweetElement = function(data) {
 };
 
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 //Uses createTweetElements function to display tweets from array of tweet objects
 const renderTweets = function(tweets) {
-  $('.tweet-container').empty();//Empties container to ensure duplicate tweets are not posted
+  //$('.tweet-container').empty();//Empties container to ensure duplicate tweets are not posted
   for (tweetItem of tweets) {
     const $tweet = createTweetElement(tweetItem);
     $(".tweet-container").prepend($tweet);
