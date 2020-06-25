@@ -97,7 +97,7 @@ const escape =  function(str) {
 
 //Uses createTweetElements function to display tweets from array of tweet objects
 const renderTweets = function(tweets) {
-  //$('.tweet-container').empty();//Empties container to ensure duplicate tweets are not posted
+  $('.tweet-container').empty();//Empties container to ensure duplicate tweets are not posted
   for (tweetItem of tweets) {
     const $tweet = createTweetElement(tweetItem);
     $(".tweet-container").prepend($tweet);
